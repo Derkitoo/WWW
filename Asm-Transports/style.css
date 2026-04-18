@@ -1,0 +1,329 @@
+/* RESET & BASICS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --asm-orange: #f29400; /* Orange exact du logo ASM */
+    --asm-black: #1a1a1a;  /* Noir profond pour le header/footer */
+    --asm-white: #ffffff;
+    --asm-gray: #f4f4f4;   /* Gris clair pour les fonds de section */
+    --asm-blue: #00b8b8;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--asm-black);
+    background-color: var(--asm-white);
+}
+
+/* HEADER */
+.main-header {
+    background-color: var(--asm-black);
+    color: var(--asm-white);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--asm-orange); /* Rappel de la ligne orange */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-area .logo-title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--asm-white);
+}
+
+.logo-area small {
+    font-size: 0.7rem;
+    color: var(--asm-orange);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: var(--asm-white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--asm-orange);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone-number {
+    font-weight: bold;
+    color: var(--asm-white);
+}
+
+.btn-top-urgent {
+    background-color: var(--asm-blue);
+    color: var(--asm-white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070') no-repeat center center/cover;
+    height: 60vh;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.75); /* Overlay sombre pour faire ressortir l'orange */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--asm-white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero-content h1 span {
+    color: var(--asm-blue);
+    display: block;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* BUTTONS */
+.hero-ctas {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 35px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.btn-blue {
+    background-color: var(--asm-blue);
+    color: var(--asm-white);
+}
+
+.btn-orange:hover {
+    background-color: #d68200;
+}
+
+.btn-white {
+    border: 2px solid var(--asm-white);
+    color: var(--asm-white);
+    background: transparent;
+}
+
+.btn-white:hover {
+    background: var(--asm-white);
+    color: var(--asm-black);
+}
+
+/* FEATURES SECTION */
+.features-section {
+    background-color: var(--asm-gray);
+    padding: 80px 20px;
+}
+
+.features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--asm-white);
+    border: 2px solid var(--asm-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 2rem;
+    color: var(--asm-orange);
+}
+
+.feature-item h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: var(--asm-black);
+}
+
+.feature-item p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .main-nav { display: none; }
+    .features-container { grid-template-columns: repeat(2, 1fr); }
+    .hero-content h1 { font-size: 2.5rem; }
+}
+
+/* SERVICES CARDS (Style 3ème capture) */
+.services-cards-section {
+    background-color: #f4f7f9;
+    padding: 60px 20px;
+}
+
+.cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    background-color: #1c2533; /* Bleu nuit de la capture */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card-tagline {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-box-gray {
+    background-color: #f1f3f5;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.info-box-gray small {
+    font-size: 0.75rem;
+    color: #666;
+    display: block;
+}
+
+.info-box-blue {
+    background-color: #eef6ff;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    color: #1c2533;
+    font-size: 0.9rem;
+}
+
+.card-features {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.card-features li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+/* Couleur verte pour les coches comme sur l'image */
+.card-features li::first-letter {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.btn-card {
+    margin-top: auto;
+    background-color: #f29400;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-card:hover {
+    background-color: #d68200;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
